@@ -7,76 +7,78 @@ function Register() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    organization: "",
-    ticket: "Standard",
-    diet: "",
-    notes: ""
+    name:"",
+    email:"",
+    phone:"",
+    organization:"",
+    ticket:"Standard",
+    notes:""
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e)=>{
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e)=>{
     e.preventDefault();
-
     localStorage.setItem("registration", JSON.stringify(formData));
-
     navigate("/review");
   };
 
   return (
-    <div className="flex justify-center p-10">
+
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
 
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-lg shadow w-96"
+        className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md space-y-4"
       >
 
-        <h2 className="text-2xl mb-6 font-bold">
+        <h2 className="text-2xl font-bold text-center mb-4">
           Event Registration
         </h2>
 
         <input
-          className="border p-2 w-full mb-3"
+          type="text"
           name="name"
           placeholder="Full Name"
+          className="border p-3 w-full rounded"
           onChange={handleChange}
           required
         />
 
         <input
-          className="border p-2 w-full mb-3"
+          type="email"
           name="email"
-          placeholder="Email"
+          placeholder="Email Address"
+          className="border p-3 w-full rounded"
           onChange={handleChange}
           required
         />
 
         <input
-          className="border p-2 w-full mb-3"
+          type="text"
           name="phone"
           placeholder="Phone Number"
+          className="border p-3 w-full rounded"
           onChange={handleChange}
         />
 
         <input
-          className="border p-2 w-full mb-3"
+          type="text"
           name="organization"
           placeholder="Organization"
+          className="border p-3 w-full rounded"
           onChange={handleChange}
         />
 
         <select
           name="ticket"
+          className="border p-3 w-full rounded"
           onChange={handleChange}
-          className="border p-2 w-full mb-3"
         >
           <option>Standard</option>
           <option>VIP</option>
@@ -86,12 +88,12 @@ function Register() {
         <textarea
           name="notes"
           placeholder="Additional notes"
-          className="border p-2 w-full mb-4"
+          className="border p-3 w-full rounded"
           onChange={handleChange}
         />
 
         <button
-          className="bg-blue-600 text-white w-full py-2 rounded"
+          className="bg-blue-600 text-white w-full py-3 rounded-lg hover:bg-blue-700"
         >
           Review Registration
         </button>
@@ -99,6 +101,7 @@ function Register() {
       </form>
 
     </div>
+
   );
 }
 
