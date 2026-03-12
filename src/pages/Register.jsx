@@ -6,7 +6,7 @@ function Register() {
 
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
+  const [formData,setFormData] = useState({
     name:"",
     email:"",
     phone:"",
@@ -24,85 +24,82 @@ function Register() {
 
   const handleSubmit = (e)=>{
     e.preventDefault();
-    localStorage.setItem("registration", JSON.stringify(formData));
+    localStorage.setItem("registration",JSON.stringify(formData));
     navigate("/review");
   };
 
-  return (
+  return(
 
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+<div className="min-h-screen flex items-center justify-center bg-gray-900">
 
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md space-y-4"
-      >
+<form
+onSubmit={handleSubmit}
+className="bg-gray-800 p-10 rounded-2xl shadow-2xl w-full max-w-md space-y-4 text-white"
+>
 
-        <h2 className="text-2xl font-bold text-center mb-4">
-          Event Registration
-        </h2>
+<h2 className="text-3xl font-semibold text-center mb-4">
+Conference Registration
+</h2>
 
-        <input
-          type="text"
-          name="name"
-          placeholder="Full Name"
-          className="border p-3 w-full rounded"
-          onChange={handleChange}
-          required
-        />
+<input
+type="text"
+name="name"
+placeholder="Full Name"
+className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600"
+onChange={handleChange}
+/>
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Email Address"
-          className="border p-3 w-full rounded"
-          onChange={handleChange}
-          required
-        />
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600"
+onChange={handleChange}
+/>
 
-        <input
-          type="text"
-          name="phone"
-          placeholder="Phone Number"
-          className="border p-3 w-full rounded"
-          onChange={handleChange}
-        />
+<input
+type="text"
+name="phone"
+placeholder="Phone Number"
+className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600"
+onChange={handleChange}
+/>
 
-        <input
-          type="text"
-          name="organization"
-          placeholder="Organization"
-          className="border p-3 w-full rounded"
-          onChange={handleChange}
-        />
+<input
+type="text"
+name="organization"
+placeholder="Organization"
+className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600"
+onChange={handleChange}
+/>
 
-        <select
-          name="ticket"
-          className="border p-3 w-full rounded"
-          onChange={handleChange}
-        >
-          <option>Standard</option>
-          <option>VIP</option>
-          <option>Student</option>
-        </select>
+<select
+name="ticket"
+className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600"
+onChange={handleChange}
+>
+<option>Standard</option>
+<option>VIP</option>
+<option>Student</option>
+</select>
 
-        <textarea
-          name="notes"
-          placeholder="Additional notes"
-          className="border p-3 w-full rounded"
-          onChange={handleChange}
-        />
+<textarea
+name="notes"
+placeholder="Additional notes"
+className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600"
+/>
 
-        <button
-          className="bg-blue-600 text-white w-full py-3 rounded-lg hover:bg-blue-700"
-        >
-          Review Registration
-        </button>
+<button
+className="w-full bg-amber-400 text-black py-3 rounded-lg font-semibold hover:bg-amber-300 transition"
+>
+Review Registration
+</button>
 
-      </form>
+</form>
 
-    </div>
+</div>
 
-  );
+  )
 }
 
-export default Register;
+export default Register

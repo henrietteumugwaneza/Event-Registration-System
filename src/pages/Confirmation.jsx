@@ -1,21 +1,23 @@
 import React from "react";
-function Confirmation() {
+function Confirmation(){
 
-  return (
-    <div className="flex flex-col items-center justify-center h-screen">
+return(
 
-      <h1 className="text-4xl font-bold mb-4">
-        Registration Successful 🎉
-      </h1>
+<div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-black via-purple-900 to-gray-900 text-white">
 
-      <p className="text-lg">
-        Thank you for registering for the Tech Innovation Conference.
-      </p>
+<h1 className="text-4xl font-bold mb-4">
+🎉 Registration Successful
+</h1>
 
-      <p>Your seat has been reserved.</p>
+<p className="text-gray-300 text-center max-w-md">
+Thank you for registering for the Tech Innovation Conference.
+Your seat has been reserved and we look forward to seeing you there.
+</p>
 
-    </div>
-  );
+</div>
+
+)
+
 }
 
-export default Confirmation;
+export default Confirmation

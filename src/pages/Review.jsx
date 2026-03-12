@@ -1,50 +1,56 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function Review() {
+function Review(){
 
-  const navigate = useNavigate();
+const navigate = useNavigate();
+const data = JSON.parse(localStorage.getItem("registration"));
 
-  const data = JSON.parse(localStorage.getItem("registration"));
+return(
 
-  return (
-    <div className="flex justify-center p-10">
+<div className="min-h-screen flex items-center justify-center bg-gray-900">
 
-      <div className="bg-white p-8 shadow rounded w-96">
+<div className="bg-gray-800 text-white p-10 rounded-2xl shadow-xl w-full max-w-md">
 
-        <h2 className="text-2xl font-bold mb-6">
-          Review Your Information
-        </h2>
+<h2 className="text-2xl font-semibold mb-6 text-center">
+Review Your Details
+</h2>
 
-        <p><b>Name:</b> {data.name}</p>
-        <p><b>Email:</b> {data.email}</p>
-        <p><b>Phone:</b> {data.phone}</p>
-        <p><b>Organization:</b> {data.organization}</p>
-        <p><b>Ticket:</b> {data.ticket}</p>
-        <p><b>Notes:</b> {data.notes}</p>
+<div className="space-y-2 text-gray-300">
 
-        <div className="flex gap-4 mt-6">
+<p><b>Name:</b> {data.name}</p>
+<p><b>Email:</b> {data.email}</p>
+<p><b>Phone:</b> {data.phone}</p>
+<p><b>Organization:</b> {data.organization}</p>
+<p><b>Ticket:</b> {data.ticket}</p>
+<p><b>Notes:</b> {data.notes}</p>
 
-          <button
-            onClick={() => navigate("/register")}
-            className="bg-gray-500 text-white px-4 py-2 rounded"
-          >
-            Edit
-          </button>
+</div>
 
-          <button
-            onClick={() => navigate("/confirmation")}
-            className="bg-green-600 text-white px-4 py-2 rounded"
-          >
-            Confirm
-          </button>
+<div className="flex gap-4 mt-6">
 
-        </div>
+<button
+onClick={()=>navigate("/register")}
+className="flex-1 bg-gray-600 py-2 rounded-lg"
+>
+Edit
+</button>
 
-      </div>
+<button
+onClick={()=>navigate("/confirmation")}
+className="flex-1 bg-amber-400 text-black py-2 rounded-lg"
+>
+Confirm
+</button>
 
-    </div>
-  );
+</div>
+
+</div>
+
+</div>
+
+)
+
 }
 
-export default Review;
+export default Review
